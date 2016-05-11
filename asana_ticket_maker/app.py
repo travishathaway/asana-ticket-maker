@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, request
 
 from . import settings
 from .forms import FeedbackForm
+from .email import send_mail
 
 
 app = Flask(__name__)
@@ -21,6 +22,7 @@ def index():
     """
     form = FeedbackForm()
     if request.method == 'POST' and form.validate():
+        send_mail(form.title.data, form.description.data)
         return redirect('/thank-you')
     return render_template('index.html', form=form)
 

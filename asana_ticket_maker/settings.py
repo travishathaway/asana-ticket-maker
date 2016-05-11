@@ -1,9 +1,12 @@
 import os
 
 # Email settings
-EMAIL_USER = os.getenv('APP_EMAIL_USER')
-EMAIL_PASSWORD = os.getenv('APP_EMAIL_PASSWORD')
-EMAIL_HOST = os.getenv('APP_EMAIL_HOST')
+SMTP_USER = os.getenv('APP_SMTP_USER')
+SMTP_PASSWORD = os.getenv('APP_SMTP_PASSWORD')
+SMTP_HOST = os.getenv('APP_SMTP_HOST')
+SMTP_PORT = os.getenv('APP_SMTP_PORT')
+
+ASANA_PROJECT_EMAIL = os.getenv('APP_ASANA_PROJECT_EMAIL')
 
 # Recaptcha Settings
 RECAPTCHA_PUBLIC_KEY = os.getenv('APP_RECAPTCHA_PUBLIC_KEY')
