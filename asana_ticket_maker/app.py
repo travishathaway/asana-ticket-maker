@@ -10,6 +10,10 @@ app.secret_key = settings.SECRET_KEY
 app.config['RECAPTCHA_PUBLIC_KEY'] = settings.RECAPTCHA_PUBLIC_KEY
 app.config['RECAPTCHA_PRIVATE_KEY'] = settings.RECAPTCHA_PRIVATE_KEY
 
+if settings.SENTRY_DSN:
+    from raven.contrib.flask import Sentry
+    sentry = Sentry(app, dsn=settings.SENTRY_DSN)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
