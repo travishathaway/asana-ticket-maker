@@ -1,0 +1,13 @@
+import os
+
+# Email settings
+EMAIL_USER = os.getenv('APP_EMAIL_USER')
+EMAIL_PASSWORD = os.getenv('APP_EMAIL_PASSWORD')
+EMAIL_HOST = os.getenv('APP_EMAIL_HOST')
+
+# Recaptcha Settings
+RECAPTCHA_PUBLIC_KEY = os.getenv('APP_RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = os.getenv('APP_RECAPTCHA_PRIVATE_KEY')
+
+# CSRF
+SECRET_KEY = os.getenv('APP_SECRET_KEY')
