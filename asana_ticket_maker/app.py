@@ -26,7 +26,8 @@ def index():
     """
     form = FeedbackForm()
     if request.method == 'POST' and form.validate():
-        send_mail(form.title.data, form.description.data)
+        mail_data = form.get_email_data()
+        send_mail(*mail_data)
         return redirect('/thank-you')
     return render_template('index.html', form=form)
 
